@@ -11,13 +11,25 @@
         .host { visibility: hidden; }
         .host:invalid { background: crimson; }
         </style>
+
+        <style type="text/css" media="screen">
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #202023;
+                color: #fff;
+            }
+            p, span, label {
+                color: rgb(177, 177, 179);
+            }
+        }
+        </style>
     </head>
 
     <body>
         <div class="content">
             <form id="proxy-settings" class="pure-form">
-                <fieldset id="" class="">
-                    <legend>Fallback proxy</legend>
+                <h3>Fallback proxy</h3>
+                <fieldset>
                     <select class="type" id="fallback-type">
                         <option>direct</option>
                         <option>socks</option>
@@ -25,20 +37,21 @@
                     <input type="text" class="host" id="fallback-host" required/>
                     <span class="pure-form-message">Used as a fallback when no proxy is defined</span>
 
-                    <legend>Proxy per container</legend>
-                    <div id="containers-menu">
+                </fieldset>
+                <h3>Proxy per container</h3>
+                <fieldset id="containers-menu">
 
-                    </div>
                 </fieldset>
             </form>
+            <h3>Import / Export</h3>
             <form class="pure-form">
                 <fieldset id="" class="">
-                    <legend>Import/Export</legend>
                     <input type="text" id="json-txt"/>
                 </fieldset>
             </form>
             <button id="import" action="import" class="pure-button">Import</button>
             <button id="export" action="export" class="pure-button">Export</button>
+
             <script src="options.js"></script>
         </div>
     </body>
