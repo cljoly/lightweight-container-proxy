@@ -40,5 +40,5 @@
     "description": "Lightweight socks5 proxy per container",
     "manifest_version": 2,
     "name": "Lightweight Container Proxy",
-    "version": "0.2.0"
+    "version": "0.3.0"
 }
