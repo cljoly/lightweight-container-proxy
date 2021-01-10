@@ -69,19 +69,19 @@ browser.proxy.onRequest.addListener(async function (details) {
         const stateKey = `state-${tab.cookieStoreId}`;
         const setting = await browser.storage.local.get([stateKey]);
         if (setting[stateKey] != null) {
-            const p = await proxyContainer(setting[stateKey]);
+            const p = proxyContainer(setting[stateKey]);
             // console.log(setting[stateKey], " => proxy", p);
             // console.log("; details", details);
             return p;
         }
     }
-    const p = await proxyContainer(await fallback());
+    const p = proxyContainer(await fallback());
     // console.log("NO TAB => proxy", p, details.tabId);
     return p;
 }, {urls: ["<all_urls>"], incognito: false}, []);
 
 browser.proxy.onRequest.addListener(async function (details) {
-    const p = await proxyContainer(await incognito());
+    const p = proxyContainer(await incognito());
     // console.log("INCOGNITO => proxy", p, details.tabId);
     return p;
 }, {urls: ["<all_urls>"], incognito: true}, []);
