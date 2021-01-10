@@ -69,6 +69,7 @@ class containersHTTPS {
 
   async createRow(container) {
     const fs = document.createElement("field-set");
+    fs.appendChild(document.createElement("div"));
     fs.appendChild(this.createIcon(container));
     fs.appendChild(this.createName(container));
     fs.appendChild(await this.createTypeChoser(container));

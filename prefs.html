@@ -4,12 +4,19 @@
     <head>
         <meta charset="utf-8"/>
         <style type="text/css" media="screen">
-        .content { padding: 0 3em 5em;}
-        .type { margin: 0.5em;}
+        .content { padding: 1rem 1.5rem 5rem;}
+        .type { margin: 0.5rem;}
         .type[data-content="socks"] + .host {  visibility: visible; }
         .host { visibility: hidden; }
         .host:invalid { background: crimson; }
         fieldset { border: none; }
+        .icon {
+          display: inline-block;
+          border: 0;
+          block-size: 20px;
+          inline-size: 20px;
+          margin-inline-end: 6px;
+        }
         </style>
 
         <style type="text/css" media="screen">
@@ -37,11 +44,12 @@
                     </select>
                     <input type="text" class="host" id="fallback-host" required/>
                 </fieldset>
+
                 <h3>Proxy per container</h3>
                 <p>For each container, requests will be proxied (<em>socks</em> option), sent directly (<em>direct</em> option) or fallback settings from the above section will be used (<em>fallback</em> option).</p>
-                <fieldset id="containers-menu">
+                <ul id="containers-menu">
 
-                </fieldset>
+                </ul>
             </form>
             <h3>Import / Export</h3>
             <form class="pure-form">
