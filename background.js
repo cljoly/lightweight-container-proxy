@@ -1,6 +1,6 @@
 async function proxyFromSettings(settingObject) {
     if (settingObject == null || settingObject['type'] == null) {
-        console.warn("no settings defined", settingObject);
+        console.warn("no settings defined");
         return defaultProxy();
     }
     switch (settingObject.type) {
@@ -35,7 +35,7 @@ async function proxyContainer(settingContainerObject) {
                 return proxyFromSettings(await fallback());
         }
     }
-    console.warn("no settings found for container", settingContainerObject);
+    console.warn("no settings found for container");
     return proxyFromSettings(await fallback());
 }
 
@@ -76,3 +76,6 @@ browser.proxy.onRequest.addListener(async function (details) {
 browser.proxy.onError.addListener(function (err) {
     console.error("proxy error", err);
 })
+
+// Handle click on the action button
+browser.browserAction.onClicked.addListener(async function() { await browser.runtime.openOptionsPage() });

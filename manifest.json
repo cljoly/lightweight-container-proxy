@@ -7,6 +7,20 @@
         "48": "logo_48.png",
         "96": "logo_96.png"
     },
+    "browser_action": {
+        "default_icon": {
+            "48": "logo_48.png",
+            "96": "logo_96.png"
+        },
+        "default_title": "Lightweight Container Proxy Settings"
+    },
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Ctrl+Alt+P"
+            }
+        }
+    },
     "background": {
         "scripts": ["background.js"]
     },
