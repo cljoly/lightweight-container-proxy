@@ -1,4 +1,10 @@
 {
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "lightweight-container-proxy@131719.xyz",
+            "strict_min_version": "60.0"
+        }
+    },
     "options_ui": {
         "page": "prefs.html",
         "browser_style": true
@@ -34,5 +40,5 @@
     "description": "Lightweight socks5 proxy per container",
     "manifest_version": 2,
     "name": "Lightweight Container Proxy",
-    "version": "0.1.0"
+    "version": "0.2.0"
 }
