@@ -119,6 +119,14 @@ class containersHTTPS {
       await this.connectToStore(host, null, 'host');
   }
 
+  async updateIncognito() {
+      const select = document.getElementById("incognito-type");
+      await this.connectToStore(select, 'incognito', 'type');
+
+      const host = document.getElementById("incognito-host");
+      await this.connectToStore(host, 'incognito', 'host');
+  }
+
   async handleEvent(event) {
     const button = event.target;
     const cookieStoreId = button.dataset.cookieStoreId;
@@ -175,6 +183,7 @@ class containersHTTPS {
     });
 
     const fallbackPromise = await this.updateFallback();
+    const incognitoPromise = await this.updateIncognito();
 
     const rows = await Promise.all(rowPromises);
     rows.forEach((row) => {

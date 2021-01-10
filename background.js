@@ -49,6 +49,13 @@ function defaultProxy() {
     return direct();
 }
 
+// Use incognito settings
+async function incognito() {
+        const stateKey = 'state-incognito';
+        const setting = await browser.storage.local.get([stateKey]);
+        return setting[stateKey];
+}
+
 // Use fallback settings
 async function fallback() {
         const stateKey = 'fallback';
@@ -71,7 +78,13 @@ browser.proxy.onRequest.addListener(async function (details) {
     const p = await proxyContainer(await fallback());
     // console.log("NO TAB => proxy", p, details.tabId);
     return p;
-}, {urls: ["<all_urls>"]}, []);
+}, {urls: ["<all_urls>"], incognito: false}, []);
+
+browser.proxy.onRequest.addListener(async function (details) {
+    const p = await proxyContainer(await incognito());
+    // console.log("INCOGNITO => proxy", p, details.tabId);
+    return p;
+}, {urls: ["<all_urls>"], incognito: true}, []);
 
 browser.proxy.onError.addListener(function (err) {
     console.error("proxy error", err);

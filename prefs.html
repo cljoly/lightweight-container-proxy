@@ -50,6 +50,17 @@
                 <ul id="containers-menu">
 
                 </ul>
+
+                <h3>Incognito proxy</h3>
+                <p>Used as a in incognito mode. Note that the extension needs to be allowed in private mode for this to have any effect.</p>
+                <fieldset>
+                    <select class="type" id="incognito-type">
+                        <option>fallback</option>
+                        <option>direct</option>
+                        <option>socks</option>
+                    </select>
+                    <input type="text" class="host" id="incognito-host" required/>
+                </fieldset>
             </form>
             <h3>Import / Export</h3>
             <form class="pure-form">
