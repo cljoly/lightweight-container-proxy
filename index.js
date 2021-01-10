@@ -11,7 +11,7 @@ class containersHTTPS {
 
   async createToggle(container) {
     const toggle = document.createElement("input");
-    toggle.type = "checkbox";
+    toggle.type = "text";
     toggle.classList.add("toggle");
 
     toggle.addEventListener("click", this);
@@ -77,7 +77,8 @@ class containersHTTPS {
         });
         break;
       case "toggle":
-        this.storeState(cookieStoreId, button.checked);
+        // TODO Make port settable
+        this.storeState(cookieStoreId, {host: button.value, port: 1080});
         break;
     }
   }

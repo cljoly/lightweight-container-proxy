@@ -1,16 +1,10 @@
 # Containers HTTPS
 
-If you install this extension it will redirect all traffic from HTTP to HTTPS when it is toggled on in the sidebar
+This firefox addon will, for each [tab container](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/) optionally redirect redirect traffic through a socks5 proxy.
 
-This is an example extension that shows several things:
+## Permission Request Explanations
 
-- An exension can listen to container events
-- An extension can intercept tabs and redirect URLs based on the container
-- Container APIs provide icon and colours
-- An extension can create container tabs
+## Thanks
 
-Not shown:
-
-- An extension can create it's own containers
-
-![Screenshot showing sidebar in action](img/screenshot.png)
+- [github.com/jonathanKingston/containers-https](https://github.com/jonathanKingston/containers-https), used as a starting point
+- [Vector clip art of four crossed color feathers](https://publicdomainvectors.org/en/free-clipart/Vector-clip-art-of-four-crossed-color-feathers/31643.html) (public domain), as a base for the logo.

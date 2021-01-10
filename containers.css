@@ -31,8 +31,8 @@ menu > li > .toggle {
 
 .toggle {
   -moz-appearance: none;
-  display: inline-flex;
-  inline-size: 50px;
+  display: block;
+  inline-size: 80%;
   background-color: var(--secondary-color);
   border-radius: 2px;
   position: relative;
@@ -61,14 +61,6 @@ menu > li > .toggle {
   border-radius: 2px;
 }
 
-.toggle::before {
-  content: "OFF";
-}
-
-.toggle:checked::after {
-  content: "ON";
-}
-
 .toggle::before,
 .toggle:checked::after {
   background: unset;
@@ -76,19 +68,4 @@ menu > li > .toggle {
   font-weight: bold;
   text-transform: uppercase;
   color: var(--primary-text-color);
-}
-
-button {
-  appearance: none;
-  background: #979797;
-  mask: url('img/container-newtab.svg') top left / contain;
-  border: none;
-  min-inline-size: 20px;
-  margin-inline-end: 6px;
-  margin-inline-start: 6px;
-}
-
-button:hover,
-button:focus {
-  background: #0094fb;
 }

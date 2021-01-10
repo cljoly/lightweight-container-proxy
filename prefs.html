@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="pure-min.css">
+        <style type="text/css" media="screen">
+        .content { padding: 0 3em;}
+        .container-name { padding-right: 0.5em;}
+        .type[data-content="socks"] + .host {  visibility: visible; }
+        .host { visibility: hidden; }
+        .host:invalid { background: crimson; }
+        </style>
+    </head>
+
+    <body>
+        <div class="content">
+            <form id="proxy-settings" class="pure-form">
+                <fieldset id="" class="">
+                    <legend>Fallback proxy</legend>
+                    <select class="type" id="fallback-type">
+                        <option>direct</option>
+                        <option>socks</option>
+                    </select>
+                    <input type="text" class="host" id="fallback-host" required/>
+                    <span class="pure-form-message">Used as a fallback when no proxy is defined</span>
+
+                    <legend>Proxy per container</legend>
+                    <div id="containers-menu">
+
+                    </div>
+                </fieldset>
+            </form>
+            <form class="pure-form">
+                <fieldset id="" class="">
+                    <legend>Import/Export</legend>
+                    <input type="text" id="json-txt"/>
+                </fieldset>
+            </form>
+            <button id="import" action="import" class="pure-button">Import</button>
+            <button id="export" action="export" class="pure-button">Export</button>
+            <script src="options.js"></script>
+        </div>
+    </body>
+</html>

@@ -1,24 +1,19 @@
 {
-  "sidebar_action": {
-    "browser_style": true,
-    "default_icon": "manage-16.png",
-    "default_title": "Containers HTTPS",
-    "default_panel": "page.html"
-  },
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "permissions": [
-    "cookies",
-    "storage",
-    "webRequest",
-    "webRequestBlocking",
-    "contextualIdentities",
-    "<all_urls>",
-    "tabs"
-  ],
-  "description": "An experiment showing all containers APIs",
-  "manifest_version": 2,
-  "name": "Container https",
-  "version": "1.0"
+    "options_ui": {
+        "page": "prefs.html",
+        "browser_style": true
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": [
+        "proxy",
+        "storage",
+        "contextualIdentities",
+        "<all_urls>"
+    ],
+    "description": "Lightweight socks5 proxy per container",
+    "manifest_version": 2,
+    "name": "Lightweight Container Proxy",
+    "version": "0.1.0"
 }
