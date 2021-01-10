@@ -6,6 +6,7 @@ class containersHTTPS {
     const iconUrl = container.iconUrl || "img/blank-tab.svg";
     icon.style.mask = `url(${iconUrl}) top left / contain`;
     icon.style.background = container.colorCode || "#000";
+
     return icon;
   }
 
@@ -69,13 +70,22 @@ class containersHTTPS {
   }
 
   async createRow(container) {
-    const fs = document.createElement("field-set");
-    fs.appendChild(this.createIcon(container));
-    fs.appendChild(this.createName(container));
+    const containerDiv = document.createElement("div");
+    containerDiv.classList.add("inline");
+    containerDiv.appendChild(this.createIcon(container));
+    containerDiv.appendChild(this.createName(container));
+
+    const fs = document.createElement("div");
+    fs.classList.add("inline");
     fs.appendChild(await this.createTypeChoser(container));
     fs.appendChild(await this.createHost(container));
 
-    return fs;
+    const li = document.createElement("li");
+    li.classList.add("row");
+    li.appendChild(containerDiv);
+    li.appendChild(fs);
+
+    return li;
   }
 
   stateKey(cookieStoreId) {
