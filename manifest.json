@@ -3,6 +3,10 @@
         "page": "prefs.html",
         "browser_style": true
     },
+    "icons": {
+        "48": "logo_48.png",
+        "96": "logo_96.png"
+    },
     "background": {
         "scripts": ["background.js"]
     },
