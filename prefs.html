@@ -3,13 +3,13 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" href="pure-min.css">
         <style type="text/css" media="screen">
         .content { padding: 0 3em;}
-        .container-name { padding-right: 0.5em;}
+        .type { margin: 0.5em;}
         .type[data-content="socks"] + .host {  visibility: visible; }
         .host { visibility: hidden; }
         .host:invalid { background: crimson; }
+        fieldset { border: none; }
         </style>
 
         <style type="text/css" media="screen">
@@ -29,14 +29,13 @@
         <div class="content">
             <form id="proxy-settings" class="pure-form">
                 <h3>Fallback proxy</h3>
+                <p>Used as a fallback when no proxy is defined</p>
                 <fieldset>
                     <select class="type" id="fallback-type">
                         <option>direct</option>
                         <option>socks</option>
                     </select>
                     <input type="text" class="host" id="fallback-host" required/>
-                    <span class="pure-form-message">Used as a fallback when no proxy is defined</span>
-
                 </fieldset>
                 <h3>Proxy per container</h3>
                 <fieldset id="containers-menu">
@@ -45,14 +44,12 @@
             </form>
             <h3>Import / Export</h3>
             <form class="pure-form">
-                <fieldset id="" class="">
                     <input type="text" id="json-txt"/>
-                </fieldset>
             </form>
             <button id="import" action="import" class="pure-button">Import</button>
             <button id="export" action="export" class="pure-button">Export</button>
 
-            <script src="options.js"></script>
+            <script src="prefs.js"></script>
         </div>
     </body>
 </html>
