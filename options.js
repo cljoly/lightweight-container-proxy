@@ -182,14 +182,15 @@ class containersHTTPS {
   }
 };
 
-new containersHTTPS();
+const containerHTTPS = new containersHTTPS();
 
 document.getElementById("export").addEventListener("click", exportPrefs);
 document.getElementById("import").addEventListener("click", importPrefs);
 
-function importPrefs() {
+async function importPrefs() {
     const jsonTxt = document.getElementById("json-txt");
-    browser.storage.local.set(JSON.parse(jsonTxt.value));
+    await browser.storage.local.set(JSON.parse(jsonTxt.value));
+    containerHTTPS.rebuildMenu();
 }
 
 async function exportPrefs() {
