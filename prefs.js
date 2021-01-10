@@ -63,6 +63,7 @@ class containersHTTPS {
     let label = document.createElement("label");
     label.textContent = container.name;
     label.classList.add("container-name");
+    label.style.color = container.colorCode || "#000";
 
     return label;
   }
