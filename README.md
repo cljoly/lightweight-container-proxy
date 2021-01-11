@@ -3,6 +3,9 @@
 ![logo](logo.svg)
 
 # Lightweight Container Proxy
+
+![Mozilla Add-on](https://img.shields.io/amo/v/lightweight-container-proxy-02)
+
 </div>
 
 This firefox addon will, for each [tab container](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/) optionally redirect redirect traffic through a socks5 proxy.
