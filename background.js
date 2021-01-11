@@ -92,3 +92,10 @@ browser.proxy.onError.addListener(function (err) {
 
 // Handle click on the action button
 browser.browserAction.onClicked.addListener(async function() { await browser.runtime.openOptionsPage() });
+
+// Open preferences when installed
+browser.runtime.onInstalled.addListener(async function(details) {
+    if (details.reason === "install") {
+        await browser.runtime.openOptionsPage() 
+    }
+});

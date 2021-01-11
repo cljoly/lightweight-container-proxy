@@ -21,7 +21,7 @@ class containersHTTPS {
   }
 
   async connectToStore(formElement, cookieStoreId, stateField) {
-    console.log("connecting to store:", formElement)
+    // console.log("connecting to store:", formElement)
     // formElement.addEventListener("click", this);
     // formElement.addEventListener("submit", this);
     formElement.addEventListener("change", this);
@@ -36,7 +36,7 @@ class containersHTTPS {
       formElement.dataset.cookieStoreId = cookieStoreId;
     }
     formElement.dataset.action = actionType;
-    console.log("connected to store:", formElement)
+    // console.log("connected to store:", formElement)
   }
 
   async createTypeChoser(container) {
@@ -99,15 +99,15 @@ class containersHTTPS {
     if (states && states[stateKey]) {
         state = states[stateKey];
     }
-    console.log("got state", state);
+    // console.log("got state", state);
     return state
   }
 
   async storeState(cookieStoreId, state) {
-    console.log("storing state", cookieStoreId, state);
+    // console.log("storing state", cookieStoreId, state);
     const stateKey = this.stateKey(cookieStoreId);
     const res = await browser.storage.local.set({[stateKey]: state});
-    console.log("stored state, result: ", res);
+    // console.log("stored state, result: ", res);
     return res;
   }
 
