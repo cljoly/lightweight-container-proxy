@@ -9,7 +9,7 @@
 
 This firefox addon will, for each [tab container](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/) optionally redirect redirect traffic through a socks5 proxy.
 
-The aim is to keep the code small to ease inspection ([malware in extensions du happen](https://lwn.net/Articles/846272/)). Have a look at the code yourself!
+The aim is to keep the code small to ease inspection ([malware in extensions](https://lwn.net/Articles/846272/) do happen). Have a look at the code yourself!
 
 ![Settings page](./img/screenshot.png)
 
