@@ -4,6 +4,14 @@ async function proxyFromSettings(settingObject) {
         return defaultProxy();
     }
     switch (settingObject.type) {
+        case 'socks_no_dns':
+            return {
+                type: "socks",
+                host: settingObject.host,
+                port: settingObject.port,
+                proxyDNS: false,
+                failoverTimeout: 10,
+            }
         case 'socks':
             return {
                 type: "socks",
@@ -26,6 +34,7 @@ async function proxyContainer(settingContainerObject) {
     if (settingContainerObject != null && settingContainerObject['type'] != null) {
         switch (settingContainerObject.type) {
             case 'socks':
+            case 'socks_no_dns':
             case 'direct':
                 return proxyFromSettings(settingContainerObject);
             case 'fallback':

@@ -6,7 +6,8 @@
         <style type="text/css" media="screen">
         .content { padding: 1rem 1.5rem 5rem;}
         .type { margin: 0.5rem;}
-        .type[data-content="socks"] + .host {  visibility: visible; }
+        .type[data-content="socks"] + .host { visibility: visible; }
+        .type[data-content="socks_no_dns"] + .host { visibility: visible; }
         .host { visibility: hidden; }
         .host:invalid { background: crimson; }
         fieldset { border: none; }
@@ -25,7 +26,7 @@
                 background: #202023;
                 color: #fff;
             }
-            p, a, span, label {
+            p, a, span, label, li {
                 color: rgb(177, 177, 179);
             }
         }
@@ -36,17 +37,23 @@
         <div class="content">
             <form id="proxy-settings" class="pure-form">
                 <h3>Fallback proxy</h3>
-                <p>Used as a fallback when no options are defined. With option <em>direct</em>, no proxy is used and option <em>socks</em> define a proxy to use.</p>
+                <p>Used as a fallback when no options are defined. With option:</p>
+                    <ul>
+                        <li><em>direct</em>, no proxy is used</li>
+                        <li><em>socks</em>, the defined proxy is used</li>
+                        <li><em>socks_no_dns</em>, the defined proxy is used but DNS requests are resolved locally</li>
+                    </ul>
                 <fieldset>
                     <select class="type" id="fallback-type">
                         <option>direct</option>
                         <option>socks</option>
+                        <option>socks_no_dns</option>
                     </select>
                     <input type="text" class="host" id="fallback-host" required/>
                 </fieldset>
 
                 <h3>Proxy per container</h3>
-                <p>For each container, requests will be proxied (<em>socks</em> option), sent directly (<em>direct</em> option) or fallback settings from the above section will be used (<em>fallback</em> option).</p>
+                <p>For each container, requests will be proxied (<em>socks</em> or <em>socks_no_dns</em> option), sent directly (<em>direct</em> option) or fallback settings from the above section will be used (<em>fallback</em> option).</p>
                 <ul id="containers-menu">
 
                 </ul>

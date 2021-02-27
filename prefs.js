@@ -49,10 +49,13 @@ class containersHTTPS {
     direct.textContent = "direct";
     let socks = document.createElement("option");
     socks.textContent = "socks";
+    let socks_no_dns = document.createElement("option");
+    socks_no_dns.textContent = "socks_no_dns";
 
     select.appendChild(fallback);
     select.appendChild(direct);
     select.appendChild(socks);
+    select.appendChild(socks_no_dns);
 
     await this.connectToStore(select, container.cookieStoreId, 'type');
 
