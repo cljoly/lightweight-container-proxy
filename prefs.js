@@ -200,6 +200,9 @@ const containerHTTPS = new containersHTTPS();
 document.getElementById("export").addEventListener("click", exportPrefs);
 document.getElementById("import").addEventListener("click", importPrefs);
 
+document.getElementById("exportSync").addEventListener("click", exportPrefsToSync);
+document.getElementById("importSync").addEventListener("click", importPrefsToSync);
+
 async function importPrefs() {
     const jsonTxt = document.getElementById("json-txt");
     await browser.storage.local.set(JSON.parse(jsonTxt.value));
@@ -212,3 +215,36 @@ async function exportPrefs() {
     jsonTxt.value = JSON.stringify(storage);
 }
 
+// Export to firefox sync
+async function exportPrefsToSync() {
+  console.log("Hi export");
+  const msgTxt = document.getElementById("sync-msg");
+  msgTxt.value = "";
+  const storage = await browser.storage.local.get(null);
+  browser.storage.sync.set(storage).then(
+    success => {
+      console.log("Bye export");
+      msgTxt.innerHTML = "Exported successfully";
+    }, reason => {
+      console.log("Sad export");
+      msgTxt.innerHTML = "error: " + reason.message;
+    }
+  );
+}
+
+// Import from firefox sync
+async function importPrefsToSync() {
+  console.log("Hi import");
+  const msgTxt = document.getElementById("sync-msg");
+  msgTxt.innerHTML = "";
+  const storage = await browser.storage.local.get(null);
+  browser.storage.sync.get(storage).then(
+    success => {
+      console.log("Bye import");
+      msgTxt.innerHTML = "Imported successfully";
+    }, reason => {
+      console.log("Sad import");
+      msgTxt.innerHTML = "Import error: " + reason.message;
+    }
+  );
+}

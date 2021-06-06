@@ -74,11 +74,17 @@
             <p>Please <a href="https://addons.mozilla.org/en-US/firefox/addon/lightweight-container-proxy-02/?utm_source=about.addons&utm_medium=link">leave a review</a> or <a href="https://github.com/cljoly/lightweight-container-proxy/issues/new">report a bug</a>.</p>
 
             <h3>Import / Export</h3>
+            <h4>Manual</h4>
             <form class="pure-form">
                     <input type="text" id="json-txt"/>
             </form>
             <button id="import" action="import" class="pure-button">Import</button>
             <button id="export" action="export" class="pure-button">Export</button>
+
+            <h4>Via Firefox Sync</h4>
+            <p id="sync-msg">Nothing done yet</p>
+            <button id="importSync" action="importSync" class="pure-button">Import</button>
+            <button id="exportSync" action="exportSync" class="pure-button">Export</button>
 
             <script src="prefs.js"></script>
         </div>
