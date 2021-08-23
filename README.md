@@ -1,17 +1,42 @@
-<div align=center>
-  
-![logo](logo.svg)
+<!-- insert
+---
+title: "Lightweight Container Proxy"
+date: 2021-08-23T20:13:46Z
+---
+{{< rawhtml >}}
+<div align=center class="badges center">
+{{< /rawhtml >}}
+end_insert -->
 
+<!-- remove -->
+<div align=center>
+<!-- end_remove -->
+
+![logo](https://raw.githubusercontent.com/cljoly/lightweight-container-proxy/master/logo.svg)
+
+<!-- remove -->
 # Lightweight Container Proxy
+<!-- end_remove -->
 
 [![Mozilla Add-on](https://img.shields.io/amo/v/lightweight-container-proxy-02?color=blueviolet&label=Get%20it%20now%21&logo=firefox&style=for-the-badge)](https://addons.mozilla.org/en-US/firefox/addon/lightweight-container-proxy-02/?utm_source=github.com&utm_medium=shield)
-</div>
 
-This firefox addon will, for each [tab container](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/) optionally redirect redirect traffic through a socks5 proxy.
+<!-- insert
+{{< rawhtml >}}
+end_insert -->
+</div>
+<!-- insert
+{{< /rawhtml >}}
+end_insert -->
+
+<!-- insert
+{{< github_badge >}}
+end_insert -->
+
+This firefox addon will, for each [tab container](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/) optionally redirect traffic through a socks5 proxy.
 
 The aim is to keep the code small to ease inspection ([malware in extensions](https://lwn.net/Articles/846272/) do happen). Have a look at the code yourself!
 
-![Settings page](./img/screenshot.png)
+![Settings page](https://raw.githubusercontent.com/cljoly/lightweight-container-proxy/master/img/screenshot.png)
 
 ## Permission Request Explanations
 
