@@ -2,6 +2,7 @@
 ---
 title: "Lightweight Container Proxy"
 date: 2021-08-23T20:13:46Z
+description: "🔒 Lightweight firefox addon providing socks5 proxy per container"
 ---
 {{< rawhtml >}}
 <div align=center class="badges center">
