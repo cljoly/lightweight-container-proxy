@@ -37,6 +37,10 @@ end_insert -->
 {{< github_badge >}}
 end_insert -->
 
+*******************************************
+> **Since [version 8.0.0](https://github.com/mozilla/multi-account-containers/releases/tag/8.0.0), [Firefox Multi-Account Containers](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/) supports per-container proxy. As a result, this extension is almost entirely redundant and I’m not developing it anymore.**
+*******************************************
+
 This firefox addon will, for each [tab container](https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/) optionally redirect traffic through a socks5 proxy.
 
 The aim is to keep the code small to ease inspection ([malware in extensions](https://lwn.net/Articles/846272/) do happen). Have a look at the code yourself!
